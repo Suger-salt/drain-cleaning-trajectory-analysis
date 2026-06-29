@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+.venv/
+env/
+scop/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Large raw video files
+*.mp4
+*.MOV
+*.mov
+*.avi
+
+# Optional large outputs
+*.npy
+*.npz

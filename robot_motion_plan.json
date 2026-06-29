@@ -1,0 +1,163 @@
+{
+  "plan_name": "drain_cleaning_robot_motion_plan",
+  "description": "Human shovel motion primitives were translated into robot-executable motion primitives. Human trajectories are not directly replayed; they are used to infer task intent and safe robot parameters.",
+  "coordinate_assumption": {
+    "task_frame": "mocap_task_frame",
+    "x": "longitudinal direction of gutter",
+    "y": "width/depth direction",
+    "z": "height direction",
+    "note": "This is a provisional task-frame interpretation based on motion observation. Before real robot execution, conversion to robot base frame is required."
+  },
+  "safety_config": {
+    "workspace_x_mm": 200.0,
+    "workspace_y_mm": 200.0,
+    "workspace_z_mm": 120.0,
+    "workspace_margin_mm": 20.0,
+    "scrape_max_distance_mm": 80.0,
+    "scrape_speed_mm_s": 20.0,
+    "scrape_force_limit_N": 3.0,
+    "lift_max_height_mm": 50.0,
+    "lift_speed_mm_s": 20.0,
+    "dump_lateral_offset_mm": 60.0,
+    "dump_height_offset_mm": 30.0,
+    "dump_tilt_angle_deg": 65.0,
+    "dump_tilt_speed_deg_s": 10.0,
+    "retract_speed_mm_s": 20.0
+  },
+  "steps": [
+    {
+      "step_id": 0,
+      "source_primitive": "scrape_or_scoop",
+      "robot_primitive": "guarded_scrape_or_scoop",
+      "intent": "側溝長手方向に沿って泥や堆積物をかく・すくう",
+      "human_reference": {
+        "start_time": 7.0,
+        "end_time": 9.0,
+        "delta_mm": [
+          304.899433172275,
+          24.990335432287992,
+          7.921381171795105
+        ],
+        "max_tip_speed_mm_s": 671.8731718166449,
+        "max_angular_speed_deg_s": 56.42395033422913,
+        "total_rotation_deg": 13.533768693483072
+      },
+      "robot_parameters": {
+        "task_frame": "mocap_task_frame",
+        "motion_type": "linear_contact_motion",
+        "direction": "+x",
+        "distance_mm": 80.0,
+        "speed_mm_s": 20.0,
+        "force_limit_N": 3.0,
+        "orientation_policy": "keep_average_tool_orientation",
+        "contact_policy": "guarded"
+      },
+      "safety_policy": {
+        "do_not_push_bottom_strongly": true,
+        "stop_if_force_exceeds_limit": true,
+        "use_low_speed_near_unknown_region": true
+      },
+      "translation_note": "人間のscrape_or_scoopでは+x方向への進行が支配的であった。ロボットでは同じ方向性のみを使い、距離・速度・力を安全側に制限する。"
+    },
+    {
+      "step_id": 1,
+      "source_primitive": "lift",
+      "robot_primitive": "lift",
+      "intent": "すくった泥や堆積物を保持したまま持ち上げる",
+      "human_reference": {
+        "start_time": 9.0,
+        "end_time": 10.9,
+        "delta_mm": [
+          320.54266734256396,
+          318.79964187085693,
+          672.9088544126251
+        ],
+        "max_tip_speed_mm_s": 1810.594317726745,
+        "max_angular_speed_deg_s": 103.00383723720216,
+        "total_rotation_deg": 23.737187207955586
+      },
+      "robot_parameters": {
+        "task_frame": "mocap_task_frame",
+        "motion_type": "vertical_lift",
+        "direction": "+z",
+        "height_mm": 50.0,
+        "speed_mm_s": 20.0,
+        "orientation_policy": "keep_tool_orientation",
+        "human_dominant_direction": "+z",
+        "preserve_lateral_motion": false
+      },
+      "safety_policy": {
+        "avoid_sudden_acceleration": true,
+        "keep_payload_stable": true
+      },
+      "translation_note": "人間のliftでは+z方向の変化が支配的であった。ロボットでは持ち上げ意図を使い、安全な高さまで上昇する動作に変換する。"
+    },
+    {
+      "step_id": 2,
+      "source_primitive": "dump_main",
+      "robot_primitive": "safe_dump",
+      "intent": "すくった泥や堆積物を排出する",
+      "human_reference": {
+        "start_time": 10.9,
+        "end_time": 11.45,
+        "delta_mm": [
+          -992.2456863845119,
+          833.369286104224,
+          740.475457416747
+        ],
+        "max_tip_speed_mm_s": 5513.93310793131,
+        "max_angular_speed_deg_s": 800.9904444082734,
+        "total_rotation_deg": 150.94639078866206,
+        "human_motion_character": "high_speed_throwing"
+      },
+      "robot_parameters": {
+        "task_frame": "mocap_task_frame",
+        "motion_type": "move_then_tilt",
+        "dump_position_policy": "predefined_safe_dump_area",
+        "lateral_offset_mm": 60.0,
+        "height_offset_mm": 30.0,
+        "tilt_angle_deg": 65.0,
+        "tilt_speed_deg_s": 10.0,
+        "do_not_throw": true
+      },
+      "safety_policy": {
+        "do_not_imitate_high_speed_throwing": true,
+        "limit_angular_velocity": true,
+        "avoid_scattering_sediment": true,
+        "avoid_collision_with_wall": true
+      },
+      "translation_note": "人間のdump_mainでは先端速度・角速度・姿勢変化が最大となり、高速な投げ捨て動作であることが確認された。ロボットではこの軌道を直接模倣せず、排出意図のみを利用して安全な低速傾け動作へ置換する。"
+    },
+    {
+      "step_id": 3,
+      "source_primitive": "retract",
+      "robot_primitive": "safe_retract",
+      "intent": "排出後にスコップを次の作業開始姿勢へ戻す",
+      "human_reference": {
+        "start_time": 11.45,
+        "end_time": 12.8,
+        "delta_mm": [
+          801.563233239172,
+          -1073.095168283998,
+          -964.0963142313419
+        ],
+        "max_tip_speed_mm_s": 2558.231795858746,
+        "max_angular_speed_deg_s": 236.7227151593392,
+        "total_rotation_deg": 166.12787827591947
+      },
+      "robot_parameters": {
+        "task_frame": "mocap_task_frame",
+        "motion_type": "return_to_ready_pose",
+        "target_policy": "next_scrape_start_pose_or_safe_pose",
+        "speed_mm_s": 20.0,
+        "orientation_policy": "restore_scrape_orientation"
+      },
+      "safety_policy": {
+        "collision_avoidance": true,
+        "avoid_bottom_and_wall_contact": true,
+        "move_through_safe_height_if_needed": true
+      },
+      "translation_note": "人間のretractではdump後に位置と姿勢が大きく復帰していた。ロボットではこの戻り軌道を直接再現するのではなく、安全姿勢または次のscrape開始姿勢へ戻る動作として生成する。"
+    }
+  ]
+}

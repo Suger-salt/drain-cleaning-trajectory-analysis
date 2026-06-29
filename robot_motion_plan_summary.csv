@@ -1,0 +1,5 @@
+﻿step_id,source_primitive,robot_primitive,intent,start_time,end_time,human_delta,human_max_tip_speed_mm_s,human_max_angular_speed_deg_s,human_total_rotation_deg,motion_type,direction,distance_mm,height_mm,speed_mm_s,force_limit_N,tilt_angle_deg,tilt_speed_deg_s,do_not_throw
+0,scrape_or_scoop,guarded_scrape_or_scoop,側溝長手方向に沿って泥や堆積物をかく・すくう,7.0,9.0,"[304.899433172275, 24.990335432287992, 7.921381171795105]",671.8731718166449,56.42395033422913,13.533768693483072,linear_contact_motion,+x,80.0,,20.0,3.0,,,
+1,lift,lift,すくった泥や堆積物を保持したまま持ち上げる,9.0,10.9,"[320.54266734256396, 318.79964187085693, 672.9088544126251]",1810.594317726745,103.00383723720216,23.737187207955586,vertical_lift,+z,,50.0,20.0,,,,
+2,dump_main,safe_dump,すくった泥や堆積物を排出する,10.9,11.45,"[-992.2456863845119, 833.369286104224, 740.475457416747]",5513.93310793131,800.9904444082734,150.94639078866206,move_then_tilt,,,,,,65.0,10.0,True
+3,retract,safe_retract,排出後にスコップを次の作業開始姿勢へ戻す,11.45,12.8,"[801.563233239172, -1073.095168283998, -964.0963142313419]",2558.231795858746,236.7227151593392,166.12787827591947,return_to_ready_pose,,,,20.0,,,,

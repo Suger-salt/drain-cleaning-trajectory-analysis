@@ -1,0 +1,426 @@
+[
+  {
+    "segment_id": 0,
+    "primitive": "scrape_or_scoop",
+    "human_interval": {
+      "start_time": 7.0,
+      "end_time": 9.0,
+      "duration_s": 2.0
+    },
+    "motion_features": {
+      "segment_id": 0,
+      "primitive": "scrape_or_scoop",
+      "start_frame": 840,
+      "end_frame": 1080,
+      "start_time": 7.0,
+      "end_time": 9.0,
+      "duration_s": 2.0,
+      "start_x": 87.519081004856,
+      "start_y": 222.085699360901,
+      "start_z": 38.1880923424327,
+      "end_x": 392.418514177131,
+      "end_y": 247.076034793189,
+      "end_z": 46.1094735142278,
+      "delta_x": 304.899433172275,
+      "delta_y": 24.990335432287992,
+      "delta_z": 7.921381171795105,
+      "displacement_mm": 306.0243936248575,
+      "path_length_mm": 454.0330043752524,
+      "straightness": 0.6740135423545824,
+      "dominant_axis": "x",
+      "dominant_axis_role": "longitudinal",
+      "dominant_axis_signed": "+x",
+      "direction_unit_x": 0.9963239516979109,
+      "direction_unit_y": 0.08166125300103559,
+      "direction_unit_z": 0.02588480309679363,
+      "min_x": 72.3338280943702,
+      "max_x": 393.448386176082,
+      "min_y": 209.465841639223,
+      "max_y": 248.266256263696,
+      "min_z": 27.5712882284558,
+      "max_z": 46.1094735142278,
+      "x_positive_ratio": 0.5666666666666667,
+      "y_positive_ratio": 0.5083333333333333,
+      "z_positive_ratio": 0.5791666666666667,
+      "x_negative_ratio": 0.43333333333333335,
+      "y_negative_ratio": 0.49166666666666664,
+      "z_negative_ratio": 0.42083333333333334,
+      "mean_tip_speed_mm_s": 226.44713514381684,
+      "max_tip_speed_mm_s": 671.8731718166449,
+      "min_tip_speed_mm_s": 4.579555275799577,
+      "std_tip_speed_mm_s": 207.43084412329551,
+      "mean_angular_speed_deg_s": 21.573257872353864,
+      "max_angular_speed_deg_s": 56.42395033422913,
+      "min_angular_speed_deg_s": 1.0174902394716188,
+      "std_angular_speed_deg_s": 10.937682526917163,
+      "mean_x_axis_change_deg": 0.1338800271976293,
+      "mean_y_axis_change_deg": 0.13247773472304292,
+      "mean_z_axis_change_deg": 0.15648734139550566,
+      "max_x_axis_change_deg": 0.461355926287035,
+      "max_y_axis_change_deg": 0.4606542637167629,
+      "max_z_axis_change_deg": 0.4476699227239966,
+      "total_rotation_deg": 13.533768693483072,
+      "R_start": [
+        [
+          0.9769375150662472,
+          0.0159622685861267,
+          -0.2129279165299143
+        ],
+        [
+          0.0224398597592844,
+          -0.9993549145335954,
+          0.0280393917825269
+        ],
+        [
+          -0.2123429875229447,
+          -0.0321708063177587,
+          -0.9766654979422053
+        ]
+      ],
+      "R_end": [
+        [
+          0.9998304033165336,
+          -0.0092029231545046,
+          0.0159521412139607
+        ],
+        [
+          -0.0089848794883232,
+          -0.9998659625946116,
+          -0.0136868106340006
+        ],
+        [
+          0.016075961696837,
+          0.0135411613299217,
+          -0.9997790757989282
+        ]
+      ]
+    },
+    "robot_translation_hint": {
+      "robot_primitive": "guarded_scrape_or_scoop",
+      "human_motion_usage": "partial",
+      "translation_policy": "人間動作から作業方向・距離・姿勢を抽出し、ロボットでは低速・力制限付きで再生成する。",
+      "task_direction": "+x",
+      "suggested_distance_mm": 300.0,
+      "suggested_speed": "slow",
+      "force_policy": "force_limited",
+      "safety_rule": "底面へ強く押し込まない。力が急増したら停止または後退する。"
+    }
+  },
+  {
+    "segment_id": 1,
+    "primitive": "lift",
+    "human_interval": {
+      "start_time": 9.0,
+      "end_time": 10.9,
+      "duration_s": 1.9000000000000004
+    },
+    "motion_features": {
+      "segment_id": 1,
+      "primitive": "lift",
+      "start_frame": 1080,
+      "end_frame": 1308,
+      "start_time": 9.0,
+      "end_time": 10.9,
+      "duration_s": 1.9000000000000004,
+      "start_x": 392.418514177131,
+      "start_y": 247.076034793189,
+      "start_z": 46.1094735142278,
+      "end_x": 712.961181519695,
+      "end_y": 565.875676664046,
+      "end_z": 719.018327926853,
+      "delta_x": 320.54266734256396,
+      "delta_y": 318.79964187085693,
+      "delta_z": 672.9088544126251,
+      "displacement_mm": 810.6707960639657,
+      "path_length_mm": 1115.2077419245575,
+      "straightness": 0.7269235727013152,
+      "dominant_axis": "z",
+      "dominant_axis_role": "height",
+      "dominant_axis_signed": "+z",
+      "direction_unit_x": 0.39540423671222474,
+      "direction_unit_y": 0.3932541340069467,
+      "direction_unit_z": 0.830064259968148,
+      "min_x": 392.385665617981,
+      "max_x": 712.961181519695,
+      "min_y": 246.641576801192,
+      "max_y": 565.875676664046,
+      "min_z": 45.0870994443488,
+      "max_z": 719.018327926853,
+      "x_positive_ratio": 0.8026315789473685,
+      "y_positive_ratio": 0.8377192982456141,
+      "z_positive_ratio": 0.8026315789473685,
+      "x_negative_ratio": 0.19736842105263158,
+      "y_negative_ratio": 0.16228070175438597,
+      "z_negative_ratio": 0.19736842105263158,
+      "mean_tip_speed_mm_s": 584.4296971418578,
+      "max_tip_speed_mm_s": 1810.594317726745,
+      "min_tip_speed_mm_s": 5.699967773540088,
+      "std_tip_speed_mm_s": 338.9424776326619,
+      "mean_angular_speed_deg_s": 28.586315887011168,
+      "max_angular_speed_deg_s": 103.00383723720216,
+      "min_angular_speed_deg_s": 3.081058654628211,
+      "std_angular_speed_deg_s": 16.809018227373365,
+      "mean_x_axis_change_deg": 0.18540726973754085,
+      "mean_y_axis_change_deg": 0.21571664387539527,
+      "mean_z_axis_change_deg": 0.1569523603544037,
+      "max_x_axis_change_deg": 0.6958338307138212,
+      "max_y_axis_change_deg": 0.8537234578862818,
+      "max_z_axis_change_deg": 0.554989997300949,
+      "total_rotation_deg": 23.737187207955586,
+      "R_start": [
+        [
+          0.9998304033165336,
+          -0.0092029231545046,
+          0.0159521412139607
+        ],
+        [
+          -0.0089848794883232,
+          -0.9998659625946116,
+          -0.0136868106340006
+        ],
+        [
+          0.016075961696837,
+          0.0135411613299217,
+          -0.9997790757989282
+        ]
+      ],
+      "R_end": [
+        [
+          0.9276888388515162,
+          0.3486880082567048,
+          0.133454453534896
+        ],
+        [
+          0.3656256678553227,
+          -0.9208178712469705,
+          -0.1356920004920961
+        ],
+        [
+          0.0755730724244739,
+          0.1746743280799155,
+          -0.9817217476628268
+        ]
+      ]
+    },
+    "robot_translation_hint": {
+      "robot_primitive": "lift",
+      "human_motion_usage": "partial",
+      "translation_policy": "人間動作から持ち上げ意図と高さ変化を抽出し、ロボットでは安定姿勢で上方へ移動する。",
+      "suggested_lift_height_mm": 672.9088544126251,
+      "suggested_speed": "moderate",
+      "orientation_policy": "keep_or_stabilize_tool_orientation",
+      "safety_rule": "持ち上げ中に泥を落とさないよう姿勢変化を抑える。"
+    }
+  },
+  {
+    "segment_id": 2,
+    "primitive": "dump_main",
+    "human_interval": {
+      "start_time": 10.9,
+      "end_time": 11.45,
+      "duration_s": 0.5499999999999989
+    },
+    "motion_features": {
+      "segment_id": 2,
+      "primitive": "dump_main",
+      "start_frame": 1308,
+      "end_frame": 1374,
+      "start_time": 10.9,
+      "end_time": 11.45,
+      "duration_s": 0.5499999999999989,
+      "start_x": 712.961181519695,
+      "start_y": 565.875676664046,
+      "start_z": 719.018327926853,
+      "end_x": -279.284504864817,
+      "end_y": 1399.24496276827,
+      "end_z": 1459.4937853436,
+      "delta_x": -992.2456863845119,
+      "delta_y": 833.369286104224,
+      "delta_z": 740.475457416747,
+      "displacement_mm": 1492.434176842341,
+      "path_length_mm": 2051.2192896294205,
+      "straightness": 0.7275839225907283,
+      "dominant_axis": "x",
+      "dominant_axis_role": "longitudinal",
+      "dominant_axis_signed": "-x",
+      "direction_unit_x": -0.6648505520584387,
+      "direction_unit_y": 0.5583960077002847,
+      "direction_unit_z": 0.4961528413825449,
+      "min_x": -279.284504864817,
+      "max_x": 858.905479015002,
+      "min_y": 565.875676664046,
+      "max_y": 1534.91339772833,
+      "min_z": 719.018327926853,
+      "max_z": 1459.4937853436,
+      "x_positive_ratio": 0.25757575757575757,
+      "y_positive_ratio": 0.6363636363636364,
+      "z_positive_ratio": 1.0,
+      "x_negative_ratio": 0.7424242424242424,
+      "y_negative_ratio": 0.36363636363636365,
+      "z_negative_ratio": 0.0,
+      "mean_tip_speed_mm_s": 3700.8493891530557,
+      "max_tip_speed_mm_s": 5513.93310793131,
+      "min_tip_speed_mm_s": 927.2005586111148,
+      "std_tip_speed_mm_s": 1426.4851338913422,
+      "mean_angular_speed_deg_s": 332.6728070884944,
+      "max_angular_speed_deg_s": 800.9904444082734,
+      "min_angular_speed_deg_s": 73.89395156712025,
+      "std_angular_speed_deg_s": 203.49337182835498,
+      "mean_x_axis_change_deg": 1.9594965318007689,
+      "mean_y_axis_change_deg": 2.2997890273770265,
+      "mean_z_axis_change_deg": 2.410699099211305,
+      "max_x_axis_change_deg": 3.4107993865431303,
+      "max_y_axis_change_deg": 6.238026947376066,
+      "max_z_axis_change_deg": 6.661125182087617,
+      "total_rotation_deg": 150.94639078866206,
+      "R_start": [
+        [
+          0.9276888388515162,
+          0.3486880082567048,
+          0.133454453534896
+        ],
+        [
+          0.3656256678553227,
+          -0.9208178712469705,
+          -0.1356920004920961
+        ],
+        [
+          0.0755730724244739,
+          0.1746743280799155,
+          -0.9817217476628268
+        ]
+      ],
+      "R_end": [
+        [
+          -0.861382567382602,
+          -0.3276617867477914,
+          0.3881466554211205
+        ],
+        [
+          0.5070522292278501,
+          -0.6002342319084484,
+          0.6185603476463253
+        ],
+        [
+          0.0303003208633995,
+          0.7296277272352798,
+          0.6831729431154714
+        ]
+      ]
+    },
+    "robot_translation_hint": {
+      "robot_primitive": "safe_dump",
+      "human_motion_usage": "intent_only",
+      "translation_policy": "人間の高速投げ捨て軌道は直接模倣せず、排出意図として扱い、安全な低速傾け動作へ置換する。",
+      "human_motion_character": "high_speed_throwing",
+      "suggested_dump_strategy": "move_to_dump_area_then_slow_tilt",
+      "suggested_speed": "slow_tilt",
+      "safety_rule": "高速な角速度を避け、周囲へ泥を飛散させない。"
+    }
+  },
+  {
+    "segment_id": 3,
+    "primitive": "retract",
+    "human_interval": {
+      "start_time": 11.45,
+      "end_time": 12.8,
+      "duration_s": 1.3500000000000014
+    },
+    "motion_features": {
+      "segment_id": 3,
+      "primitive": "retract",
+      "start_frame": 1374,
+      "end_frame": 1536,
+      "start_time": 11.45,
+      "end_time": 12.8,
+      "duration_s": 1.3500000000000014,
+      "start_x": -279.284504864817,
+      "start_y": 1399.24496276827,
+      "start_z": 1459.4937853436,
+      "end_x": 522.278728374355,
+      "end_y": 326.149794484272,
+      "end_z": 495.397471112258,
+      "delta_x": 801.563233239172,
+      "delta_y": -1073.095168283998,
+      "delta_z": -964.0963142313419,
+      "displacement_mm": 1650.3086257393663,
+      "path_length_mm": 2482.393382192759,
+      "straightness": 0.6648054404179922,
+      "dominant_axis": "y",
+      "dominant_axis_role": "width_or_depth",
+      "dominant_axis_signed": "-y",
+      "direction_unit_x": 0.48570504979337303,
+      "direction_unit_y": -0.6502390834945997,
+      "direction_unit_z": -0.5841915258725685,
+      "min_x": -298.235458555513,
+      "max_x": 871.582598156193,
+      "min_y": 326.149794484272,
+      "max_y": 1537.26828512882,
+      "min_z": 495.397471112258,
+      "max_z": 1459.4937853436,
+      "x_positive_ratio": 0.6358024691358025,
+      "y_positive_ratio": 0.25308641975308643,
+      "z_positive_ratio": 0.0,
+      "x_negative_ratio": 0.36419753086419754,
+      "y_negative_ratio": 0.7469135802469136,
+      "z_negative_ratio": 1.0,
+      "mean_tip_speed_mm_s": 1833.217217311291,
+      "max_tip_speed_mm_s": 2558.231795858746,
+      "min_tip_speed_mm_s": 93.2817049654504,
+      "std_tip_speed_mm_s": 590.4246617019563,
+      "mean_angular_speed_deg_s": 140.6056269097614,
+      "max_angular_speed_deg_s": 236.7227151593392,
+      "min_angular_speed_deg_s": 44.65961279007253,
+      "std_angular_speed_deg_s": 54.571191669752615,
+      "mean_x_axis_change_deg": 0.9719522856451419,
+      "mean_y_axis_change_deg": 0.9020051901532596,
+      "mean_z_axis_change_deg": 0.9471510246041205,
+      "max_x_axis_change_deg": 1.663628169311924,
+      "max_y_axis_change_deg": 1.6352129363363748,
+      "max_z_axis_change_deg": 1.9238797462916144,
+      "total_rotation_deg": 166.12787827591947,
+      "R_start": [
+        [
+          -0.861382567382602,
+          -0.3276617867477914,
+          0.3881466554211205
+        ],
+        [
+          0.5070522292278501,
+          -0.6002342319084484,
+          0.6185603476463253
+        ],
+        [
+          0.0303003208633995,
+          0.7296277272352798,
+          0.6831729431154714
+        ]
+      ],
+      "R_end": [
+        [
+          0.9945434585959486,
+          0.0815943940057286,
+          -0.0650051061905649
+        ],
+        [
+          0.0686942811855108,
+          -0.981160866900074,
+          -0.1805670207881309
+        ],
+        [
+          -0.0785137229814934,
+          0.1751162703198456,
+          -0.9814121902507896
+        ]
+      ]
+    },
+    "robot_translation_hint": {
+      "robot_primitive": "safe_retract",
+      "human_motion_usage": "partial",
+      "translation_policy": "人間動作から復帰意図を抽出し、ロボットでは安全姿勢または次の開始姿勢へ戻る。",
+      "suggested_target": "safe_pose_or_next_start_pose",
+      "suggested_speed": "moderate_or_slow",
+      "safety_rule": "側溝壁面・底面・未知物体との衝突を避ける。"
+    }
+  }
+]
