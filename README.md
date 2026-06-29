@@ -1,5 +1,10 @@
+### 作業環境
+os：ubuntu 24.02 LTS
+
 
 ### lerobotの動作確認コード
+
+
 
 `$ lerobot-find-port`
 
@@ -21,8 +26,8 @@
 
 
 
-
-
+` sudo chmod a+rw /dev/ttyACM0 /dev/ttyACM1`
+  一旦のUSBポートの権限付与
 
 
 
