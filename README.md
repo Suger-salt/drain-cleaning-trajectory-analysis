@@ -1,21 +1,21 @@
 
 ### lerobotの動作確認コード
 
-lerobot-find-port
+lerobot-find-port<br>
   接続してるポート番号を確認できる。接続している教師用アームや追従用アームの一旦抜いて、enterを押せば \ttyACM0 or \ttyACM1 が得られる。
   間違えるとキャリブレーションまた必要になるから注意必要やな。
 
 
-lerobot-find-cameras opencv
+lerobot-find-cameras opencv<br>
   接続されているカメラの情報やindexが見れる
 
 
-nvidia-smi
+nvidia-smi<br>
   nvidiaのバージョン確認
 
 
-conda list torch
-pip show lerobot
+conda list torch<br>
+pip show lerobot<br>
   torchのバージョン確認
 
 
