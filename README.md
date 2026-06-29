@@ -15,8 +15,8 @@
   nvidiaのバージョン確認
 
 
-`$conda list torch
-pip show lerobot`
+`$conda list torch`
+`$pip show lerobot`
   torchのバージョン確認
 
 
